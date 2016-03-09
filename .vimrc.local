@@ -1,0 +1,42 @@
+color 256-jungle
+
+"highlight the select line
+hi CursorLine cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+
+"NERDTree {
+    "open a NERDTree automatically when vim starts up
+    "autocmd vimenter * NERDTree
+    "close vim if the only window left open is a NERDTree
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    let NERDTreeChDirMode=1 " 改变tree目录的同时改变工程的目录
+    let NERDTreeWinPos="right"
+    let NERDTreeWinWidth=50 " 用扩大窗口宽度"
+    let NERDTreeShowBookmarks=1 "当打开 NERDTree 窗口时，自动显示 Bookmarks
+    let NERDChristmasTree=1
+    let NERDTreeAutoCenter=1
+    let NERDTreeMouseMode=2
+    let NERDTreeShowBookmarks=1
+    let NERDTreeShowFiles=1
+    let NERDTreeShowHidden=1
+    let NERDTreeShowLineNumbers=1
+    let NERDTreeWinSize=31
+    let NERDTreeQuitOnOpen=0 "打开文件后不关闭NerdTree窗口
+    "vim-nerdtree-tabs{
+        "autocmd vimenter * NERDTreeTabsToggle
+        "Do not open NERDTree if vim starts in diff mode
+        let g:nerdtree_tabs_no_startup_for_diff=0 
+        let g:nerdtree_tabs_smart_startup_focus=2
+        let g:nerdtree_tabs_open_on_new_tab = 0
+    "}
+"}
+
+let $GIT_SSL_NO_VERIFY = 'true'
+
+"ctrlp {
+    let g:ctrlp_match_window = 'top,order:btt,min:1,max:10,results:20'
+"}
+
+"CtrlFunky {
+    map <Leader>f :CtrlPFunky<cr>
+    let g:ctrlp_funky_syntax_highlight = 1 
+"}
