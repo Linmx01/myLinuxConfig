@@ -5,3 +5,4 @@
 !.gitignore
 !.vimrc.local
 !.vimrc.bundles.local
+!.tmux.conf
